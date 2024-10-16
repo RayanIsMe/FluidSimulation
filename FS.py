@@ -83,6 +83,11 @@ for i in range(particleCount):
     if i != j:
       distance = ((p[i].x - p[j].x)**2 + (p[i].y - p[j].y)**2)**0.5 #distance varaible stores numerical value of distance between two particles
       if distance < replusiveDistance:
+          #find the angle
+                if ob[j].x - p[i].x != 0:
+                        angle = math.atan((ob[j].y - p[i].y)/(ob[j].x - p[i].x))
+                else:
+                    angle = 90
         
   
 
