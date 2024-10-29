@@ -1,4 +1,5 @@
 import random, math
+import pandas as pd
 
 #CLASS ------------------------------------
 class particle:
