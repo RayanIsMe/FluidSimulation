@@ -116,3 +116,8 @@ while True:  # LOOP STARTS
             del p[deleteList[j]]
             n = n-1
 
+        '''PLOTTING'''
+        df = pd.dataFrame([pltx,plty])
+        st.scatter_chart(data = df, width = Bx, height = By)
+        
+
