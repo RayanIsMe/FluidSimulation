@@ -1,5 +1,6 @@
 import random, math
 import pandas as pd
+import streamlit as st
 
 #CLASS ------------------------------------
 class particle:
