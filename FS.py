@@ -120,7 +120,7 @@ while True:  # LOOP STARTS
 
         #PLOTTING
         pltxy = [pltx, plty]
-        df = pd.Series(pltxy)
+        df = pd.DataFrame(pltxy)
         st.write(df)
         plotdata = st.dataframe(data = df)
         st.scatter_chart(data = plotdata)
