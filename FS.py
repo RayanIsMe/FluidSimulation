@@ -22,6 +22,9 @@ class object(particle):
 
 #VARIABLES-------------------------------------------
 
+#streamlit
+placeholder = st.empty()
+
 #defining variables
 timeP = 0 #variable keeping track of number of interations. This variable increases by one every time the program runs through the while loop.
 particleCount = 0 #variable to keep track of number of particles
@@ -124,7 +127,7 @@ while True:  # LOOP STARTS
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
         st.empty()
-        st.scatter_chart(data = df)
+        placeholder.scatter_chart(data = df)
         time.sleep(3)
         
 
