@@ -127,7 +127,7 @@ while True:  # LOOP STARTS
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
         st.empty()
-        placeholder.scatter_chart(data = df)
-        time.sleep(3)
+        placeholder.scatter_chart(data = df, width = Bx, height = By)
+        time.sleep(0.5)
         
 
