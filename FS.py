@@ -20,15 +20,15 @@ class object(particle):
 
 #VARIABLES-------------------------------------------
 
-'''defining varaibles'''
+#defining variables
 time = 0 #variable keeping track of number of interations. This variable increases by one every time the program runs through the while loop.
 particleCount = 0 #variable to keep track of number of particles
 
-'''borders'''
+#border
 Bx = 30 #length of area of scatter plot x
 By = 10 #height of area of scatter plot y
 
-'''control variables'''
+#control variables
 initspeed = 0.7 #initial speed the particle travels at
 numberofparticlesnew = 6 #number of particles that are added per time frame
 energylose = 0.7 #amount of energy lost when colliding with edge
