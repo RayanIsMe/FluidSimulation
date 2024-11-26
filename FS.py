@@ -123,6 +123,7 @@ while True:  # LOOP STARTS
         #PLOTTING
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
+        st.empty()
         st.scatter_chart(data = df)
         time.sleep(3)
         
