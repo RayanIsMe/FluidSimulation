@@ -23,7 +23,7 @@ class object(particle):
 #VARIABLES-------------------------------------------
 
 #defining variables
-time = 0 #variable keeping track of number of interations. This variable increases by one every time the program runs through the while loop.
+timeP = 0 #variable keeping track of number of interations. This variable increases by one every time the program runs through the while loop.
 particleCount = 0 #variable to keep track of number of particles
 
 #border
@@ -58,11 +58,11 @@ while True:  # LOOP STARTS
     plty = []
     deleteList = []
 
-    time += 1  # add one to time variable every time we go through the loop
+    timeP += 1  # add one to time variable every time we go through the loop
 
     # Add particles every increment of this condition. If initial speed is higher,
     # more frequent new particles to simulate constant density
-    if time % int(2 / initspeed) == 0:
+    if timeP % int(2 / initspeed) == 0:
         for i in range(numberofparticlesnew):
             # create a new particle with initial x velocity and initial random vertical position
             p.append(particle(0, random.randint(0, By - 1) + random.random(), initspeed, 0))
