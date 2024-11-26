@@ -119,7 +119,8 @@ while True:  # LOOP STARTS
             n = n-1
 
         #PLOTTING
-        #df = pd.DataFrame([pltx,plty])
+        pltxy = [pltx, plty]
+        df = pd.DataFrame(pltxy)
         st.write("pltx: ", pltx, "plty:", plty)
         #st.scatter_chart(data = df, width = Bx, height = By)
         
