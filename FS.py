@@ -121,7 +121,7 @@ while True:  # LOOP STARTS
         #DELETE REQUIRED OBJECTS
         for j in range(len(deleteList)):
             del p[deleteList[j]]
-            n = n-1
+            particleCount -= 1
 
         #PLOTTING
         pltxy = [pltx, plty]
