@@ -1,5 +1,6 @@
 import random, math
 import pandas as pd
+import numpy as np
 import streamlit as st
 
 #CLASS ------------------------------------
@@ -122,7 +123,7 @@ while True:  # LOOP STARTS
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
         st.write(df)
-        plotdata = st.dataframe(data = df)
+        plotdata = st.dataframe(df)
         st.scatter_chart(data = plotdata)
         
 
