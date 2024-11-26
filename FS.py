@@ -2,6 +2,7 @@ import random, math
 import pandas as pd
 import numpy as np
 import streamlit as st
+import time
 
 #CLASS ------------------------------------
 class particle:
@@ -125,5 +126,6 @@ while True:  # LOOP STARTS
         st.write(df)
         plotdata = st.dataframe(df)
         st.scatter_chart(data = plotdata)
+        time.sleep(3)
         
 
