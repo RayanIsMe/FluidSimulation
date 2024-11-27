@@ -69,7 +69,7 @@ while True:  # LOOP STARTS
         for i in range(numberofparticlesnew):
             # create a new particle with initial x velocity and initial random vertical position
             p.append(particle(0, random.randint(0, By - 1) + random.random(), initspeed, 0))
-            particleCount += 1
+        particleCount += numberofparticlesnew
 
     # LOOPING PARTICLES-------------------------------------------------------------------------
     for i in range(particleCount):
