@@ -4,13 +4,7 @@ import numpy as np
 import streamlit as st
 import time
 
-if 'SS' not in st.session_state:
-    st.session_state['SS'] = 1
-
-if st.session_state['SS'] == 1:
-    #CLASS ------------------------------------
-    st.write(st.session_state['SS'])
-    class particle:
+class particle:
         x, y, Vx, Vy = 0, 0, 0, 0
         def __init__(self, x, y, Vx, Vy):
             self.x = x
@@ -25,9 +19,14 @@ if st.session_state['SS'] == 1:
             self.Vx = Vx
             self.Vy = Vy
     
+
+if 'SS' not in st.session_state:
+    st.session_state['SS'] = 1
+
+if st.session_state['SS'] == 1:
+    
     #VARIABLES-------------------------------------------
-    
-    
+
     #defining variables
     st.session_state["timeP"] = 0 #variable keeping track of number of interations. This variable increases by one every time the program runs through the while loop.
     st.session_state["particleCount"] = 0 #variable to keep track of number of particles
