@@ -55,11 +55,12 @@ if st.session_state['SS'] == 1:
     
     st.session_state['SS'] = 2
     st.rerun()
-    st.write(st.session_state['SS'])
 
 elif st.session_state['SS'] == 2:
     # SETTING VARIABLES AND LIST TO 0
     st.write(st.session_state['SS'])
+    st.button("Rerun")
+        
     pltx = []
     plty = []
     deleteList = []
