@@ -139,8 +139,8 @@ elif st.session_state['SS'] == 2:
             'x': pltx,
             'y': plty,
         })
-        placeholder.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 200)
-        time.sleep(0.1)
+        placeholder.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+        time.sleep(0.5)
             
         
 
