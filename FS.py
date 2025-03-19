@@ -135,10 +135,9 @@ elif st.session_state['SS'] == 2:
 
         st.session_state["timeP"] += 1
         #PLOTTING
-        pltxy = [[0, 100, st.session_state["timeP"]], [0, 10, 5]]
         df = pd.DataFrame({
-            'x': [0, 100, st.session_state["timeP"]],
-            'y': [0, 10, 5],
+            'x': pltx,
+            'y': plty,
         })
         placeholder.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 200)
         time.sleep(0.1)
