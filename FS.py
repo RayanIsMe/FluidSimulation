@@ -81,15 +81,15 @@ elif st.session_state['SS'] == 2:
         # Border collision
         if st.session_state["p"][i].y < 0:
             st.session_state["p"][i].y = 0
-            st.session_state["p"][i].Vy *= -energylose
-        elif st.session_state["p"][i].y > By:
-            st.session_state["p"][i].y = By
-            st.session_state["p"][i].Vy *= -energylose
+            st.session_state["p"][i].Vy *= -st.session_state["energyLoss"]
+        elif st.session_state["p"][i].y > st.session_state["By"]:
+            st.session_state["p"][i].y = st.session_state["By"]
+            st.session_state["p"][i].Vy *= -st.session_state["energylose"]
 
         if st.session_state["p"][i].x < 0:
             st.session_state["p"][i].x = 0
-            st.session_state["p"][i].Vx *= -energylose
-        elif st.session_state["p"][i].x > Bx:
+            st.session_state["p"][i].Vx *= -st.session_state["energylose"]
+        elif st.session_state["p"][i].x > st.session_state["Bx"]:
             deleteList.append(i)
 
         # REPULSIVE FORCE FROM OTHER PARTICLES
