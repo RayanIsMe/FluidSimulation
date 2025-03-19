@@ -51,7 +51,7 @@ if st.session_state["SS"] == 1:
     for h in range(64):
         st.session_state["ob"].append(object(10+(h/32), 5+(h/16), 0, 0))
         st.session_state["ob"].append(object(10+(h/8), 5-(h/20), 0, 0))
-        objCount += 2
+        st.session_state["objCount"] += 2
     
     st.session_state['SS'] = 2
 
