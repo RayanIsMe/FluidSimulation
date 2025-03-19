@@ -55,6 +55,8 @@ if st.session_state['SS'] == 1:
         st.session_state["objCount"] += 2
     
     st.session_state['SS'] = 2
+    st.rerun()
+    st.write(st.session_state['SS'])
 
 elif st.session_state['SS'] == 2:
     # SETTING VARIABLES AND LIST TO 0
