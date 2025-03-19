@@ -131,9 +131,7 @@ elif st.session_state['SS'] == 2:
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
         placeholder = st.empty()
-        with placeholder.container():
-                st.scatter_chart(data = df, width = st.session_state["Bx"], height = st.session_state["By"])
-                st.write("plot")
+        placeholder.scatter_chart(data = df, width = st.session_state["Bx"], height = st.session_state["By"])
         time.sleep(0.5)
         
 
