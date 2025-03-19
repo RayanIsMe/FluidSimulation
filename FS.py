@@ -4,6 +4,8 @@ import numpy as np
 import streamlit as st
 import time
 
+placeholder = st.empty()
+
 class particle:
         x, y, Vx, Vy = 0, 0, 0, 0
         def __init__(self, x, y, Vx, Vy):
@@ -134,7 +136,6 @@ elif st.session_state['SS'] == 2:
         #PLOTTING
         pltxy = [[10, 20], [40, 50]]
         df = pd.DataFrame(pltxy)
-        placeholder = st.empty()
         placeholder.scatter_chart(data = df, width = 700, height = 200)
         time.sleep(0.1)
         
