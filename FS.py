@@ -7,7 +7,7 @@ import time
 if 'SS' not in st.session_state:
     st.session_state['SS'] = 1
 
-if st.session_state["SS"] == 1:
+if st.session_state['SS'] == 1:
     #CLASS ------------------------------------
     class particle:
         x, y, Vx, Vy = 0, 0, 0, 0
