@@ -12,7 +12,7 @@ class particle:
             self.Vx = Vx
             self.Vy = Vy
     
-    class object(particle):
+class object(particle):
         def __init__(self, x, y, Vx, Vy):
             self.x = x
             self.y = y
