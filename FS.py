@@ -135,7 +135,7 @@ elif st.session_state['SS'] == 2:
         pltxy = [[10, 20], [40, 50]]
         df = pd.DataFrame(pltxy)
         placeholder = st.empty()
-        placeholder.scatter_chart(data = df, x = 10, y = 30, width = 700, height = 200)
+        placeholder.scatter_chart(data = df, width = 700, height = 200)
         time.sleep(0.1)
         
 
