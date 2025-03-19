@@ -132,10 +132,10 @@ elif st.session_state['SS'] == 2:
             plty.append(st.session_state["ob"][j].y)
 
         #PLOTTING
-        pltxy = [pltx, plty]
+        pltxy = [[10, 20], [40, 50]]
         df = pd.DataFrame(pltxy)
         placeholder = st.empty()
-        placeholder.scatter_chart(data = df, width = st.session_state["Bx"], height = st.session_state["By"])
-        time.sleep(0.5)
+        placeholder.scatter_chart(data = df, width = 700, height = 200)
+        time.sleep(0.1)
         
 
