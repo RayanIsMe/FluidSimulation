@@ -127,6 +127,10 @@ elif st.session_state['SS'] == 2:
             del st.session_state["p"][deleteList[j]]
             st.session_state["particleCount"] -= 1
 
+        for j in range(len(st.session_state["ob"])):
+            pltx.append(st.session_state["ob"][j].x)
+            plty.append(st.session_state["ob"][j].y)
+
         #PLOTTING
         pltxy = [pltx, plty]
         df = pd.DataFrame(pltxy)
