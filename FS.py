@@ -9,6 +9,7 @@ if 'SS' not in st.session_state:
 
 if st.session_state['SS'] == 1:
     #CLASS ------------------------------------
+    st.write(st.session_state['SS'])
     class particle:
         x, y, Vx, Vy = 0, 0, 0, 0
         def __init__(self, x, y, Vx, Vy):
