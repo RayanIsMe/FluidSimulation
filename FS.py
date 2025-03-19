@@ -136,7 +136,8 @@ elif st.session_state['SS'] == 2:
         st.session_state["timeP"] += 1
         #PLOTTING
         pltxy = [[0, 100, st.session_state["timeP"]], [0, 10, 5]]
-        df = pd.DataFrame([0, 100, st.session_state["timeP"]], columns=[0, 10, 5])
+        nparray = np.array(pltxy)
+        df = pd.DataFrame(nparray)
         placeholder.scatter_chart(data = df, width = 700, height = 200)
         time.sleep(0.1)
             
