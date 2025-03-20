@@ -198,7 +198,7 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
     
     placeholder.write(st.session_state["timeP"])
 
-    if st.session_state["timeP"] > st.session_state["its"]+2:
+    if st.session_state["timeP"] > st.session_state["its"]+20:
                 st.session_state['SS'] = 3
                 st.session_state["timeP"] = 0
 
@@ -206,11 +206,11 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
                 
 elif st.session_state['SS'] == 3: #---------------------------------------------------------------------------------------------------------------------------------------
         if st.session_state["timeP"] < st.session_state["its"]:
-                st.session_state["timeP"] += 1
                 df = pd.DataFrame({
-                    'x': st.session_state["plotx"][st.session_state["timeP"]-1],
-                    'y': st.session_state["ploty"][st.session_state["timeP"]-1],
+                    'x': st.session_state["plotx"][st.session_state["timeP"]],
+                    'y': st.session_state["ploty"][st.session_state["timeP"]],
                 })
+                st.session_state["timeP"] += 1
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
