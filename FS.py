@@ -176,10 +176,10 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
         pltx.append(st.session_state["p"][i].x)
         plty.append(st.session_state["p"][i].y)
 
-        st.write(st.session_state["timeP"])
-        st.write(pltx)
-        st.write(plty)
-        st.write("")
+    st.write(st.session_state["timeP"])
+    st.write(pltx)
+    st.write(plty)
+    st.write("")
 
         
 
