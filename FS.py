@@ -203,7 +203,7 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
                 st.session_state['SS'] = 3
                 st.session_state["timeP"] = 0
 
-    st.rerun()
+    st.button("rerun")
                 
 elif st.session_state['SS'] == 3: #---------------------------------------------------------------------------------------------------------------------------------------
         if st.session_state["timeP"] <= st.session_state["its"]:
