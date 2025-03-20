@@ -62,10 +62,10 @@ if st.session_state['SS'] == 1:
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
-    # for h in range(32):
-    #     st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
-    #     st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
-    #     st.session_state["objCount"] += 2
+    for h in range(32):
+        st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
+        st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
+        st.session_state["objCount"] += 2
     
     st.session_state['SS'] = 2
     st.rerun()
@@ -86,7 +86,7 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
 
     # Add particles every increment of this condition. If initial speed is higher,
     # more frequent new particles to simulate constant density
-    if st.session_state["timeP"] % 5 == 0:   #int(2 / st.session_state["initialSpeed"])
+    if st.session_state["timeP"] % 20 == 0:   #int(2 / st.session_state["initialSpeed"])
         st.write("NEW PARTICLES")
         for i in range(st.session_state["newParticles"]):
             # create a new particle with initial x velocity and initial random vertical position
