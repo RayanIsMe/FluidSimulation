@@ -54,6 +54,11 @@ if st.session_state['SS'] == 1:
     #defining particles
     st.session_state["p"] = [] #object list for air particle objects
     st.session_state["ob"] = [] #object list for object particle objects
+
+    #plotting lists
+    st.session_state["plotx"] = []
+    st.session_state["ploty"] = []
+    st.session_state["its"] = 100
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
@@ -186,10 +191,24 @@ elif st.session_state['SS'] == 2:
 
         st.session_state["timeP"] += 1
         #PLOTTING
+        
+
+        st.session_state["plotx"].append(pltx)
+        st.session_state["ploty"].append(plty)
+        st.write(st.session_state["timeP"])
+
+        if st.session_state["timeP"] >= st.session_state["its"]:
+                if st.button("Start Simulation"):
+                        st.session_state['SS'] = 3
+                        st.session_state["timeP"] = 0
+                
+elif st.session_state['SS'] == 3:
+        st.session_state["timeP"] += 1
         df = pd.DataFrame({
-            'x': pltx,
-            'y': plty,
+            'x': st.session_state["plotx"][st.session_state["timeP"]-1],
+            'y': st.session_state["ploty"][st.session_state["timeP"]-1],
         })
+        
         with placeholder.container():
                 st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
                 # for i in range(len(st.session_state["p"])):
