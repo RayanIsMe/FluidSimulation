@@ -58,7 +58,7 @@ if st.session_state['SS'] == 1:
     #plotting lists
     st.session_state["plotx"] = []
     st.session_state["ploty"] = []
-    st.session_state["its"] = 100
+    st.session_state["its"] = 200
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
@@ -194,7 +194,7 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
     st.session_state["ploty"].append(plty)
     placeholder.write(st.session_state["timeP"])
 
-    if st.session_state["timeP"] >= st.session_state["its"]:
+    if st.session_state["timeP"] >= st.session_state["its"]+10:
                 st.session_state['SS'] = 3
                 st.session_state["timeP"] = 0
 
