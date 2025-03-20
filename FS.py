@@ -180,33 +180,29 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
     st.write(pltx)
     st.write(plty)
     st.write("")
-
         
-
-        
-
-        #DELETE REQUIRED OBJECTS
-        for j in range(len(deleteList)):
+    #DELETE REQUIRED OBJECTS
+    for j in range(len(deleteList)):
             del st.session_state["p"][deleteList[j]]
             st.session_state["particleCount"] -= 1
 
 
-        for j in range(len(st.session_state["ob"])):
+    for j in range(len(st.session_state["ob"])):
             pltx.append(st.session_state["ob"][j].x)
             plty.append(st.session_state["ob"][j].y)
 
-        st.session_state["timeP"] += 1
-        #PLOTTING
-        
+    st.session_state["timeP"] += 1
+    #PLOTTING
 
-        st.session_state["plotx"].append(pltx)
-        st.session_state["ploty"].append(plty)
-        placeholder.write(st.session_state["timeP"])
 
-        if st.session_state["timeP"] >= st.session_state["its"]:
-                if st.button("Start Simulation"):
-                        st.session_state['SS'] = 3
-                        st.session_state["timeP"] = 0
+    st.session_state["plotx"].append(pltx)
+    st.session_state["ploty"].append(plty)
+    placeholder.write(st.session_state["timeP"])
+
+    if st.session_state["timeP"] >= st.session_state["its"]:
+        if st.button("Start Simulation"):
+                st.session_state['SS'] = 3
+                st.session_state["timeP"] = 0
 
         #st.rerun()
                 
