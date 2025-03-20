@@ -198,14 +198,14 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
     
     placeholder.write(st.session_state["timeP"])
 
-    if st.session_state["timeP"] >= st.session_state["its"]+2:
+    if st.session_state["timeP"] > st.session_state["its"]+2:
                 st.session_state['SS'] = 3
                 st.session_state["timeP"] = 0
 
     st.button("rerun")
                 
 elif st.session_state['SS'] == 3: #---------------------------------------------------------------------------------------------------------------------------------------
-        if st.session_state["timeP"] <= st.session_state["its"]:
+        if st.session_state["timeP"] < st.session_state["its"]:
                 st.session_state["timeP"] += 1
                 df = pd.DataFrame({
                     'x': st.session_state["plotx"][st.session_state["timeP"]-1],
@@ -218,7 +218,7 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                         # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
                         # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
-                st.button("Rerun")
+                st.rerun()
         else:
                 st.write("Over")
             
