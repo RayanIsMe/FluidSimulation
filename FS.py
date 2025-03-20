@@ -190,10 +190,10 @@ elif st.session_state['SS'] == 2:
         })
         with placeholder.container():
                 st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                for i in range(len(st.session_state["p"])):
-                        st.write(st.session_state["p"][i].x)
-                        st.write(st.session_state["p"][i].y)
-                        st.write("")
+                # for i in range(len(st.session_state["p"])):
+                #         st.write(st.session_state["p"][i].x)
+                #         st.write(st.session_state["p"][i].y)
+                #         st.write("")
                 # st.write(pltx)
                 # st.write(plty)
         time.sleep(0.5)
