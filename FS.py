@@ -62,10 +62,10 @@ if st.session_state['SS'] == 1:
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
-    # for h in range(32):
-    #     st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
-    #     st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
-    #     st.session_state["objCount"] += 2
+    for h in range(32):
+        st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
+        st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
+        st.session_state["objCount"] += 2
     
     st.session_state['SS'] = 2
     st.rerun()
@@ -214,7 +214,7 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                        st.write(st.session_state["timeP"])
+                        st.write(len(st.session_state["plotx"]))
                         st.write(st.session_state["its"])
                         # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
                         # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
