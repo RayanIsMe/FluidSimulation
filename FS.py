@@ -197,8 +197,6 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
 
     
     placeholder.write(st.session_state["timeP"])
-    st.write(pltx)
-    st.write(plty)
 
     if st.session_state["timeP"] >= st.session_state["its"]+2:
                 st.session_state['SS'] = 3
