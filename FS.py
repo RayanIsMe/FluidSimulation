@@ -67,7 +67,6 @@ if st.session_state['SS'] == 1:
 
 elif st.session_state['SS'] == 2:
     # SETTING VARIABLES AND LIST TO 0
-    st.write(st.session_state['SS'])
     st.button("Rerun")
         
     pltx = []
@@ -170,14 +169,13 @@ elif st.session_state['SS'] == 2:
 
         
 
+        
+
         #DELETE REQUIRED OBJECTS
         for j in range(len(deleteList)):
             del st.session_state["p"][deleteList[j]]
             st.session_state["particleCount"] -= 1
 
-        with text.container():
-                st.write(pltx)
-                st.write(plty)
 
         for j in range(len(st.session_state["ob"])):
             pltx.append(st.session_state["ob"][j].x)
@@ -191,6 +189,8 @@ elif st.session_state['SS'] == 2:
         })
         with placeholder.container():
                 st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+                st.write(pltx)
+                st.write(plty)
         time.sleep(0.5)
             
         
