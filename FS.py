@@ -100,7 +100,7 @@ elif st.session_state['SS'] == 2:
 
         if st.session_state["p"][i].x < 0:
             st.session_state["p"][i].x = 0
-            st.session_state["p"][i].Vx *= -st.session_state["energylose"]
+            st.session_state["p"][i].Vx *= -st.session_state["energyLoss"]
         elif st.session_state["p"][i].x > st.session_state["Bx"]:
             deleteList.append(i)
 
@@ -184,7 +184,10 @@ elif st.session_state['SS'] == 2:
             'x': pltx,
             'y': plty,
         })
-        placeholder.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+        with placeholder.container():
+                st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+                st.write(pltx)
+                st.write(plty)
         time.sleep(0.5)
             
         
