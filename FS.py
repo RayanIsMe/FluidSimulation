@@ -128,11 +128,13 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
 
                     # Change velocity of particle[i]
                     if st.session_state["p"][i].x <= st.session_state["p"][j].x:
-                        st.session_state["p"][i].Vx += -math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
-                        st.session_state["p"][i].Vy += -math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
+                        if distance != 0:
+                                st.session_state["p"][i].Vx += -math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
+                                st.session_state["p"][i].Vy += -math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
                     elif st.session_state["p"][i].x >= st.session_state["p"][j].x:
-                        st.session_state["p"][i].Vx += math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
-                        st.session_state["p"][i].Vy += math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
+                        if distance != 0:
+                                st.session_state["p"][i].Vx += math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
+                                st.session_state["p"][i].Vy += math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
 
 
             # REPULSIVE FORCE FROM objects
