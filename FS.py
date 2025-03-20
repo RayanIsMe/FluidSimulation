@@ -160,13 +160,13 @@ elif st.session_state['SS'] == 2:
 
 
 
-            # UPDATE POSITIONS
-            st.session_state["p"][i].x += st.session_state["p"][i].Vx
-            st.session_state["p"][i].y += st.session_state["p"][i].Vy
+        # UPDATE POSITIONS
+        st.session_state["p"][i].x += st.session_state["p"][i].Vx
+        st.session_state["p"][i].y += st.session_state["p"][i].Vy
 
-            #ADD PLOTS
-            pltx.append(st.session_state["p"][i].x)
-            plty.append(st.session_state["p"][i].y)
+        #ADD PLOTS
+        pltx.append(st.session_state["p"][i].x)
+        plty.append(st.session_state["p"][i].y)
 
         
 
