@@ -217,7 +217,7 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                         # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
                         # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
-                st.rerun()
+                st.button("Rerun")
         else:
                 st.write("Over")
             
