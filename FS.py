@@ -58,7 +58,7 @@ if st.session_state['SS'] == 1:
     #plotting lists
     st.session_state["plotx"] = []
     st.session_state["ploty"] = []
-    st.session_state["its"] = 150
+    st.session_state["its"] = 50
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
