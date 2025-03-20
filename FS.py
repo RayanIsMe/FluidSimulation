@@ -64,7 +64,11 @@ elif st.session_state['SS'] == 2:
     st.button("Rerun")
         
     pltx = []
+    pltx.append(0)
+    pltx.append(st.session_state["Bx"])
     plty = []
+    plty.append(0)
+    plty.append(st.session_state["By"])
     deleteList = []
 
     st.session_state["timeP"] += 1  # add one to time variable every time we go through the loop
