@@ -130,7 +130,7 @@ elif st.session_state['SS'] == 2:
                     if st.session_state["p"][i].x <= st.session_state["p"][j].x:
                         st.session_state["p"][i].Vx += -math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
                         st.session_state["p"][i].Vy += -math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
-                    elif p[i].x >= p[j].x:
+                    elif st.session_state["p"][i].x >= st.session_state["p"][j].x:
                         st.session_state["p"][i].Vx += math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
                         st.session_state["p"][i].Vy += math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
 
@@ -195,12 +195,14 @@ elif st.session_state['SS'] == 2:
 
         st.session_state["plotx"].append(pltx)
         st.session_state["ploty"].append(plty)
-        st.write(st.session_state["timeP"])
+        placeholder.write(st.session_state["timeP"])
 
         if st.session_state["timeP"] >= st.session_state["its"]:
                 if st.button("Start Simulation"):
                         st.session_state['SS'] = 3
                         st.session_state["timeP"] = 0
+
+        st.rerun()
                 
 elif st.session_state['SS'] == 3:
         st.session_state["timeP"] += 1
