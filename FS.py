@@ -195,7 +195,6 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
     placeholder.write(st.session_state["timeP"])
 
     if st.session_state["timeP"] >= st.session_state["its"]:
-        if st.button("Start Simulation"):
                 st.session_state['SS'] = 3
                 st.session_state["timeP"] = 0
 
