@@ -85,7 +85,7 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
 
     # Add particles every increment of this condition. If initial speed is higher,
     # more frequent new particles to simulate constant density
-    if st.session_state["timeP"] % 20 == 0:   #int(2 / st.session_state["initialSpeed"])
+    if st.session_state["timeP"] % 5 == 0:   #int(2 / st.session_state["initialSpeed"])
         st.write("NEW PARTICLES")
         for i in range(st.session_state["newParticles"]):
             # create a new particle with initial x velocity and initial random vertical position
@@ -210,6 +210,7 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+                        st.write("timeP")
                         # for i in range(len(st.session_state["p"])):
                         #         st.write(st.session_state["p"][i].x)
                         #         st.write(st.session_state["p"][i].y)
