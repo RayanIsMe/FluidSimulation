@@ -176,10 +176,6 @@ elif st.session_state['SS'] == 2: #---------------------------------------------
         pltx.append(st.session_state["p"][i].x)
         plty.append(st.session_state["p"][i].y)
 
-    st.write(st.session_state["timeP"])
-    st.write(pltx)
-    st.write(plty)
-    st.write("")
         
     #DELETE REQUIRED OBJECTS
     for j in range(len(deleteList)):
@@ -216,10 +212,10 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                        for i in range(len(st.session_state["p"])):
-                                st.write(st.session_state["p"][i].x)
-                                st.write(st.session_state["p"][i].y)
-                                st.write("")
+                        # for i in range(len(st.session_state["p"])):
+                        #         st.write(st.session_state["p"][i].x)
+                        #         st.write(st.session_state["p"][i].y)
+                        #         st.write("")
                         # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
                         # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
