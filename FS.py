@@ -85,7 +85,11 @@ elif st.session_state['SS'] == 2:
         for i in range(st.session_state["newParticles"]):
             # create a new particle with initial x velocity and initial random vertical position
             st.session_state["p"].append(particle(0, random.randint(0, st.session_state["By"] - 1) + random.random(), st.session_state["initialSpeed"], 0))
-        st.session_state["particleCount"] += st.session_state["newParticles"]
+            st.session_state["particleCount"] += 1
+            st.write(st.session_state["p"][st.session_state["particleCount"]+i].x)
+            st.write(st.session_state["p"][st.session_state["particleCount"]+i].y)
+            st.write("")
+        
 
     # LOOPING PARTICLES-------------------------------------------------------------------------
     for i in range(st.session_state["particleCount"]):
@@ -189,8 +193,8 @@ elif st.session_state['SS'] == 2:
         })
         with placeholder.container():
                 st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                st.write(pltx)
-                st.write(plty)
+                # st.write(pltx)
+                # st.write(plty)
         time.sleep(0.5)
             
         
