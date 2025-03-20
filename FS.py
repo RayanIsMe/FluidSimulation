@@ -44,7 +44,7 @@ if st.session_state['SS'] == 1:
     st.session_state["energyLoss"] = 0.7 #amount of energy lost when colliding with edge
     st.session_state["repulsiveDistance"] = 0.5
     st.session_state["repulsiveStrength"] = 0.05
-    st.session_state["objectStrength"] =  0.5 * st.session_state["initialSpeed"] * 4
+    st.session_state["objectStrength"] =  0.05 * st.session_state["initialSpeed"] * 4
     st.session_state["objectDistance"] = 1
 
     #analysis tools
@@ -90,6 +90,10 @@ elif st.session_state['SS'] == 2:
 
     # LOOPING PARTICLES-------------------------------------------------------------------------
     for i in range(st.session_state["particleCount"]):
+
+        # UPDATE POSITIONS
+        st.session_state["p"][i].x += st.session_state["p"][i].Vx
+        st.session_state["p"][i].y += st.session_state["p"][i].Vy
 
         # Border collision
         if st.session_state["p"][i].y < 0:
@@ -160,9 +164,7 @@ elif st.session_state['SS'] == 2:
 
 
 
-        # UPDATE POSITIONS
-        st.session_state["p"][i].x += st.session_state["p"][i].Vx
-        st.session_state["p"][i].y += st.session_state["p"][i].Vy
+        
 
         #ADD PLOTS
         pltx.append(st.session_state["p"][i].x)
