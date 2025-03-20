@@ -72,7 +72,6 @@ if st.session_state['SS'] == 1:
 
 elif st.session_state['SS'] == 2: #-----------------------------------------------------------------------------------------------------------------------
     # SETTING VARIABLES AND LIST TO 0
-    st.button("Rerun")
         
     pltx = []
     pltx.append(0)
