@@ -5,7 +5,7 @@ import streamlit as st
 import time
 
 placeholder = st.empty()
-text = st.empty
+text = st.empty()
 
 class particle:
         x, y, Vx, Vy = 0, 0, 0, 0
