@@ -212,12 +212,8 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
                         st.write(st.session_state["timeP"])
-                        # for i in range(len(st.session_state["p"])):
-                        #         st.write(st.session_state["p"][i].x)
-                        #         st.write(st.session_state["p"][i].y)
-                        #         st.write("")
-                        # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
-                        # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
+                        st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
+                        st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
                 st.button("Rerun")
         else:
