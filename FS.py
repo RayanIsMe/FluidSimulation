@@ -62,10 +62,10 @@ if st.session_state['SS'] == 1:
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
-    for h in range(32):
-        st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
-        st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
-        st.session_state["objCount"] += 2
+    # for h in range(32):
+    #     st.session_state["ob"].append(object(10+(h/16), 5+(h/16), 0, 0))
+    #     st.session_state["ob"].append(object(10+(h/4), 5-(h/20), 0, 0))
+    #     st.session_state["objCount"] += 2
     
     st.session_state['SS'] = 2
     st.rerun()
