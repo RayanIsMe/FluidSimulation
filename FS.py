@@ -39,10 +39,16 @@ if st.session_state['SS'] == 1:
     
     #control variables
     st.session_state["initialSpeed"] = 0.5 #initial speed the particle travels at
-    st.session_state["newParticles"] = 1 #number of particles that are added per time frame
+    st.session_state["newParticles"] = 2 #number of particles that are added per time frame
     st.session_state["energyLoss"] = 0.7 #amount of energy lost when colliding with edge
     st.session_state["repulsiveDistance"] = 0.5
     st.session_state["repulsiveStrength"] = 0.05
+    st.session_state["objectStrength"] =  0.5 * st.session_state["initialSpeed"] * 4
+    st.session_state["objectDistance"] = 1
+
+    #analysis tools
+    st.session_state["forcex"] = 0
+    st.session_state["forcey"] = 0
     
     #defining particles
     st.session_state["p"] = [] #object list for air particle objects
@@ -117,6 +123,41 @@ elif st.session_state['SS'] == 2:
                     elif p[i].x >= p[j].x:
                         st.session_state["p"][i].Vx += math.cos(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
                         st.session_state["p"][i].Vy += math.sin(angle) * (st.session_state["repulsiveDistance"] / distance) * st.session_state["repulsiveStrength"]
+
+
+            # REPULSIVE FORCE FROM objects
+            for j in range(len(st.session_state["ob"]))
+
+                #if in range
+                distance = ((st.session_state["p"][i].x - st.session_state["ob"][j].x)**2 + (st.session_state["p"][i].y - st.session_state["ob"][j].y)**2)**0.5
+                if distance < st.session_state["objectDistance"]:
+
+                    #find the angle
+                    if st.session_state["ob"][j].x - st.session_state["p"][i].x != 0:
+                        angle = math.atan((st.session_state["ob"][j].y - st.session_state["p"][i].y)/st.session_state["ob"][j].x - st.session_state["p"][i].x))
+                    else:
+                        angle = 90
+                    
+                    #chnage velocity
+                    if st.session_state["p"][i].x < st.session_state["ob"][j].x:
+                        st.session_state["p"][i].Vx += -math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["p"][i].Vy += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcex"] += math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcey"] += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                    elif p[i].x > ob[j].x:
+                        st.session_state["p"][i].Vx += math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["p"][i].Vy += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcex"] += -math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcey"] += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                    elif p[i].y > ob[j].y:
+                        st.session_state["p"][i].Vy += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcey"] += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                    else:
+                        st.session_state["p"][i].Vy += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                        st.session_state["forcey"] += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
+                    
+
+
 
             # UPDATE POSITIONS
             st.session_state["p"][i].x += st.session_state["p"][i].Vx
