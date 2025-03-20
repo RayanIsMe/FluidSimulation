@@ -58,7 +58,7 @@ if st.session_state['SS'] == 1:
     #plotting lists
     st.session_state["plotx"] = []
     st.session_state["ploty"] = []
-    st.session_state["its"] = 50
+    st.session_state["its"] = 100
     
     #OBJECT DEFINITION-----------------------------------------------------------------------------------------------
     st.session_state["objCount"] = 0 #keeps track of number of object particles. Stays constant
@@ -214,7 +214,8 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                        # st.write(st.session_state["timeP"])
+                        st.write(st.session_state["timeP"])
+                        st.write(st.session_state["its"])
                         # st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
                         # st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
