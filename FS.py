@@ -198,7 +198,8 @@ elif st.session_state['SS'] == 2:
                 #         st.write("")
                 # st.write(pltx)
                 # st.write(plty)
-        time.sleep(0.5)
+        time.sleep(0.1)
+        st.rerun()
             
         
 
