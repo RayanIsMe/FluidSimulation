@@ -211,7 +211,7 @@ elif st.session_state['SS'] == 3: #---------------------------------------------
                 
                 with placeholder.container():
                         st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                        st.write("timeP")
+                        st.write(st.session_state["timeP"])
                         # for i in range(len(st.session_state["p"])):
                         #         st.write(st.session_state["p"][i].x)
                         #         st.write(st.session_state["p"][i].y)
