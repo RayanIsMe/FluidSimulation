@@ -144,12 +144,12 @@ elif st.session_state['SS'] == 2:
                         st.session_state["p"][i].Vy += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["forcex"] += math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["forcey"] += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
-                    elif p[i].x > ob[j].x:
+                    elif st.session_state["p"][i].x > st.session_state["ob"][j].x:
                         st.session_state["p"][i].Vx += math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["p"][i].Vy += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["forcex"] += -math.cos(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["forcey"] += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
-                    elif p[i].y > ob[j].y:
+                    elif st.session_state["p"][i].y > st.session_state["ob"][j].y:
                         st.session_state["p"][i].Vy += math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                         st.session_state["forcey"] += -math.sin(angle) * (distance/st.session_state["objectDistance"]) * st.session_state["objectStrength"]
                     else:
