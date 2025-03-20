@@ -86,8 +86,8 @@ elif st.session_state['SS'] == 2:
             # create a new particle with initial x velocity and initial random vertical position
             st.session_state["p"].append(particle(0, random.randint(0, st.session_state["By"] - 1) + random.random(), st.session_state["initialSpeed"], 0))
             st.session_state["particleCount"] += 1
-            st.write(st.session_state["p"][st.session_state["particleCount"]].x)
-            st.write(st.session_state["p"][st.session_state["particleCount"]].y)
+            st.write(st.session_state["p"][st.session_state["particleCount"]-1].x)
+            st.write(st.session_state["p"][st.session_state["particleCount"]-1].y)
             st.write("")
         
 
