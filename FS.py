@@ -96,7 +96,7 @@ elif st.session_state['SS'] == 2:
             st.session_state["p"][i].Vy *= -st.session_state["energyLoss"]
         elif st.session_state["p"][i].y > st.session_state["By"]:
             st.session_state["p"][i].y = st.session_state["By"]
-            st.session_state["p"][i].Vy *= -st.session_state["energylose"]
+            st.session_state["p"][i].Vy *= -st.session_state["energyLoss"]
 
         if st.session_state["p"][i].x < 0:
             st.session_state["p"][i].x = 0
