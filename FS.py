@@ -205,22 +205,25 @@ elif st.session_state['SS'] == 2:
         st.rerun()
                 
 elif st.session_state['SS'] == 3:
-        st.session_state["timeP"] += 1
-        df = pd.DataFrame({
-            'x': st.session_state["plotx"][st.session_state["timeP"]-1],
-            'y': st.session_state["ploty"][st.session_state["timeP"]-1],
-        })
-        
-        with placeholder.container():
-                st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
-                # for i in range(len(st.session_state["p"])):
-                #         st.write(st.session_state["p"][i].x)
-                #         st.write(st.session_state["p"][i].y)
-                #         st.write("")
-                # st.write(pltx)
-                # st.write(plty)
-        time.sleep(0.1)
-        st.rerun()
+        if st.session_state["timeP"] <= st.session_state["its"]:
+                st.session_state["timeP"] += 1
+                df = pd.DataFrame({
+                    'x': st.session_state["plotx"][st.session_state["timeP"]-1],
+                    'y': st.session_state["ploty"][st.session_state["timeP"]-1],
+                })
+                
+                with placeholder.container():
+                        st.scatter_chart(data = df, x = 'x', y = 'y', width = 700, height = 400)
+                        # for i in range(len(st.session_state["p"])):
+                        #         st.write(st.session_state["p"][i].x)
+                        #         st.write(st.session_state["p"][i].y)
+                        #         st.write("")
+                        # st.write(pltx)
+                        # st.write(plty)
+                time.sleep(0.1)
+                st.button("Rerun")
+        else:
+                st.write("Over")
             
         
 
