@@ -126,7 +126,7 @@ elif st.session_state['SS'] == 2:
 
 
             # REPULSIVE FORCE FROM objects
-            for j in range(len(st.session_state["ob"]))
+            for j in range(len(st.session_state["ob"])):
 
                 #if in range
                 distance = ((st.session_state["p"][i].x - st.session_state["ob"][j].x)**2 + (st.session_state["p"][i].y - st.session_state["ob"][j].y)**2)**0.5
