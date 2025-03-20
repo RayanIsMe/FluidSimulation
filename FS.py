@@ -218,8 +218,8 @@ elif st.session_state['SS'] == 3:
                         #         st.write(st.session_state["p"][i].x)
                         #         st.write(st.session_state["p"][i].y)
                         #         st.write("")
-                        # st.write(pltx)
-                        # st.write(plty)
+                        st.write(st.session_state["plotx"][st.session_state["timeP"]-1])
+                        st.write( st.session_state["ploty"][st.session_state["timeP"]-1])
                 time.sleep(0.1)
                 st.button("Rerun")
         else:
