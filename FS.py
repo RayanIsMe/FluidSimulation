@@ -134,7 +134,7 @@ elif st.session_state['SS'] == 2:
 
                     #find the angle
                     if st.session_state["ob"][j].x - st.session_state["p"][i].x != 0:
-                        angle = math.atan((st.session_state["ob"][j].y - st.session_state["p"][i].y)/st.session_state["ob"][j].x - st.session_state["p"][i].x))
+                        angle = math.atan((st.session_state["ob"][j].y - st.session_state["p"][i].y)/(st.session_state["ob"][j].x - st.session_state["p"][i].x))
                     else:
                         angle = 90
                     
