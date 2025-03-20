@@ -38,8 +38,8 @@ if st.session_state['SS'] == 1:
     st.session_state["By"] = 10 #height of area of scatter plot y
     
     #control variables
-    st.session_state["initialSpeed"] = 0.7 #initial speed the particle travels at
-    st.session_state["newParticles"] = 6 #number of particles that are added per time frame
+    st.session_state["initialSpeed"] = 0.5 #initial speed the particle travels at
+    st.session_state["newParticles"] = 1 #number of particles that are added per time frame
     st.session_state["energyLoss"] = 0.7 #amount of energy lost when colliding with edge
     st.session_state["repulsiveDistance"] = 0.5
     st.session_state["repulsiveStrength"] = 0.05
